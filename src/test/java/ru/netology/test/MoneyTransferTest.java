@@ -7,15 +7,12 @@ import org.junit.jupiter.api.Test;
 import ru.netology.data.DataHelper;
 import ru.netology.pages.LoginPageV1;
 
-
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.netology.data.DataHelper.getFirstCardInfo;
 import static ru.netology.data.DataHelper.getSecondCardInfo;
 
-
 public class MoneyTransferTest {
-
     @BeforeEach
     public void setUp() {
         Configuration.holdBrowserOpen = true;
@@ -42,7 +39,7 @@ public class MoneyTransferTest {
     }
 
     @Test
-    void shouldTransferMoneyBetweenOwnCards() {
+    void shouldTransferMoneyBetweenOwnCards4333() {
         var loginPage = new LoginPageV1();
         var authInfo = DataHelper.getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
@@ -106,7 +103,7 @@ public class MoneyTransferTest {
     }
 
     @Test
-    void shouldTransferMoneyBetweenOwnCards4() {
+    void shouldTransferMoneyBetweenOwnCards10000() {
         Configuration.holdBrowserOpen = true;
         open("http://localhost:9999");
         var loginPage = new LoginPageV1();
@@ -148,4 +145,5 @@ public class MoneyTransferTest {
         assertEquals(expectedBalanceFirstCard, actualBalanceFirstCard);
         assertEquals(expectedBalanceSecondCard, actualBalanceSecondCard);
     }
+
 }
